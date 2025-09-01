@@ -10,72 +10,72 @@
 
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imagePlayer2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="32dp"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton6"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonScissors"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/imagePlayer1"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/interrogacao" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/imageButtonScissors"
         android:layout_width="0dp"
         android:layout_height="120dp"
         android:background="#D9CB4D"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton5"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonPaper"
         app:srcCompat="@drawable/tesoura" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/imageButtonPaper"
         android:layout_width="0dp"
         android:layout_height="120dp"
         android:background="#3DC1D1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton6"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonScissors"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton4"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonRock"
         app:srcCompat="@drawable/papel" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/imageButtonRock"
         android:layout_width="0dp"
         android:layout_height="120dp"
         android:background="#70B35B"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton5"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonPaper"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/pedra" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imagePlayer1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="32dp"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton4"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonRock"
+        app:layout_constraintEnd_toStartOf="@+id/imagePlayer2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/interrogacao" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imageVersus"
         android:layout_width="100dp"
         android:layout_height="70dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/imagePlayer1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imagePlayer1"
+        app:layout_constraintTop_toTopOf="@+id/imagePlayer1"
         app:srcCompat="@drawable/vs" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
