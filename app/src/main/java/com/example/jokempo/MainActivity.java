@@ -3,6 +3,8 @@ package com.example.jokempo;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
@@ -21,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
     ImageButton paper;
     ImageButton scissors;
 
+    Animation some;
+    Animation aparece;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +42,46 @@ public class MainActivity extends AppCompatActivity {
         rock = findViewById(R.id.imageButtonRock);
         paper = findViewById(R.id.imageButtonPaper);
         scissors = findViewById(R.id.imageButtonScissors);
+
+        some = new AlphaAnimation(1,0);
+        aparece = new AlphaAnimation(0,1);
+
+        some.setDuration(1500);
+        aparece.setDuration(100);
+
+        some.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                jogador2.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationStart(Animation animation) {
+                jogador2.setVisibility(View.VISIBLE);
+            }
+        });
+
+        aparece.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                jogador2.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationStart(Animation animation) {
+                jogador2.setVisibility(View.INVISIBLE);
+            }
+        });
     }
 
     public void buttonClick(View view){
@@ -50,5 +95,9 @@ public class MainActivity extends AppCompatActivity {
         } else {
             jogador1.setImageResource(R.drawable.interrogacao);
         }
+
+        jogador2.startAnimation(some);
+
+        jogador2.startAnimation(aparece);
     }
 }
