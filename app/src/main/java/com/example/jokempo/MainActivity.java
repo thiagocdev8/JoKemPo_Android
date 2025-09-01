@@ -14,6 +14,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     ImageView jogador1;
@@ -47,11 +49,12 @@ public class MainActivity extends AppCompatActivity {
         aparece = new AlphaAnimation(0,1);
 
         some.setDuration(1500);
-        aparece.setDuration(100);
+        aparece.setDuration(150);
 
         some.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationEnd(Animation animation) {
+
                 jogador2.setVisibility(View.INVISIBLE);
             }
 
@@ -62,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onAnimationStart(Animation animation) {
+
                 jogador2.setVisibility(View.VISIBLE);
             }
         });
@@ -69,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         aparece.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationEnd(Animation animation) {
+                verificaJogada();
                 jogador2.setVisibility(View.VISIBLE);
             }
 
@@ -79,9 +84,32 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onAnimationStart(Animation animation) {
+                sorteiaInimigo();
                 jogador2.setVisibility(View.INVISIBLE);
             }
         });
+    }
+
+    private void verificaJogada() {
+    }
+
+    private void sorteiaInimigo() {
+        Random r = new Random();
+        int jogada = r.nextInt(3);
+
+        switch(jogada){
+            case 0:
+                jogador2.setImageResource(R.drawable.pedra);
+                break;
+            case 1:
+                jogador2.setImageResource(R.drawable.papel);
+                break;
+            case 2:
+                jogador2.setImageResource(R.drawable.tesoura);
+                break;
+            default:
+                jogador2.setImageResource(R.drawable.interrogacao);
+        }
     }
 
     public void buttonClick(View view){
