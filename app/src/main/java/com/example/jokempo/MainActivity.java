@@ -2,6 +2,7 @@ package com.example.jokempo;
 
 import android.media.Image;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
@@ -36,5 +37,9 @@ public class MainActivity extends AppCompatActivity {
         rock = findViewById(R.id.imageButtonRock);
         paper = findViewById(R.id.imageButtonPaper);
         scissors = findViewById(R.id.imageButtonScissors);
+    }
+
+    public void buttonClick(View view){
+
     }
 }

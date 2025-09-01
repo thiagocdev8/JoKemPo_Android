@@ -10,6 +10,7 @@
 
 
     <ImageView
+
         android:id="@+id/imagePlayer2"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -27,6 +28,7 @@
         android:layout_width="0dp"
         android:layout_height="120dp"
         android:background="#D9CB4D"
+        android:onClick="buttonClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -38,6 +40,7 @@
         android:layout_width="0dp"
         android:layout_height="120dp"
         android:background="#3DC1D1"
+        android:onClick="buttonClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageButtonScissors"
         app:layout_constraintHorizontal_bias="0.5"
@@ -49,6 +52,7 @@
         android:layout_width="0dp"
         android:layout_height="120dp"
         android:background="#70B35B"
+        android:onClick="buttonClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageButtonPaper"
         app:layout_constraintHorizontal_bias="0.5"
