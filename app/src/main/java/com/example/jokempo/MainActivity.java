@@ -1,6 +1,7 @@
 package com.example.jokempo;
 
 import android.media.Image;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     ImageButton paper;
     ImageButton scissors;
 
+    MediaPlayer mediaPlayer;
+
     Animation some;
     Animation aparece;
 
@@ -49,11 +52,13 @@ public class MainActivity extends AppCompatActivity {
         paper = findViewById(R.id.imageButtonPaper);
         scissors = findViewById(R.id.imageButtonScissors);
 
+        mediaPlayer = MediaPlayer.create(this, R.raw.alexplay);
+
         some = new AlphaAnimation(1,0);
         aparece = new AlphaAnimation(0,1);
 
         some.setDuration(1500);
-        aparece.setDuration(150);
+        aparece.setDuration(600);
 
         some.setAnimationListener(new Animation.AnimationListener() {
             @Override
@@ -98,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         if(jogada1 == jogada2){
             Toast.makeText(this,"Empate!", Toast.LENGTH_SHORT).show();
         }
-        else if((jogada1 == 1 && jogada2 == 3) || (jogada2 == 2 && jogada2 == 1) || (jogada2 == 3 && jogada2 == 2)){
+        else if((jogada1 == 1 && jogada2 == 3) || (jogada1 == 2 && jogada2 == 1) || (jogada1 == 3 && jogada2 == 2)){
             Toast.makeText(this,"Você ganhou!", Toast.LENGTH_SHORT).show();
         }
         else Toast.makeText(this,"Você perdeu!", Toast.LENGTH_SHORT).show();
@@ -127,6 +132,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buttonClick(View view){
+
+        soundEffect();
         int clickedViewId = view.getId();
         if (clickedViewId == R.id.imageButtonRock) {
             jogada1 = 1;
@@ -144,5 +151,13 @@ public class MainActivity extends AppCompatActivity {
         jogador2.startAnimation(some);
 
         jogador2.startAnimation(aparece);
+    }
+
+    private void soundEffect() {
+
+        if(mediaPlayer != null){
+            mediaPlayer.start();
+        }
+
     }
 }
