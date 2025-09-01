@@ -40,6 +40,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buttonClick(View view){
-
+        int clickedViewId = view.getId();
+        if (clickedViewId == R.id.imageButtonRock) {
+            jogador1.setImageResource(R.drawable.pedra);
+        } else if (clickedViewId == R.id.imageButtonPaper) {
+            jogador1.setImageResource(R.drawable.papel);
+        } else if (clickedViewId == R.id.imageButtonScissors) {
+            jogador1.setImageResource(R.drawable.tesoura);
+        } else {
+            jogador1.setImageResource(R.drawable.interrogacao);
+        }
     }
 }

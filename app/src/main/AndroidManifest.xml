@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JoKemPo">
         <activity
+            android:configChanges="orientation|screenSize"
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
